@@ -1,20 +1,28 @@
-const url = 'https://swapi.dev/api/people/'
-let characters = [];
-const traits = {
-    resourceInvestigator: 0,
-    teamWorker: 0,
-    co_ordinator: 0,
-    plant: 0,
-    monitor_Evaluator: 0,
-    specialist:0,
-    shaper:0,
-    implementer:0,
-    complete_Finisher:0,
+const starWarsCharacters = [
+    { name: "Luke Skywalker", role: "coordinator" },
+    { name: "Darth Vader", role: "shaper" },
+    { name: "Princess Leia", role: "completerFinisher" },
+    { name: "Han Solo", role: "resourceInvestigator" },
+    { name: "Yoda", role: "plant" },
+    { name: "R2-D2", role: "specialist" },
+    { name: "C-3PO", role: "implementer" },
+    { name: "Obi-Wan Kenobi", role: "monitorEvaluator" },
+    { name: "Chewbacca", role: "teamworker" }];
+
+const belbinRoles = {
+    plant: { name: "Plant", description: "Creative, imaginative, and generates new ideas." },
+    resourceInvestigator: { name: "Resource Investigator", description: "Outgoing, explores opportunities, and develops contacts." },
+    coordinator: { name: "Coordinator", description: "Mature, confident, and clarifies goals." },
+    shaper: { name: "Shaper", description: "Challenging, dynamic, and thrives on pressure." },
+    monitorEvaluator: { name: "Monitor Evaluator", description: "Sober, strategic, and discerning." },
+    teamworker: { name: "Teamworker", description: "Cooperative, mild, and perceptive." },
+    implementer: { name: "Implementer", description: "Disciplined, reliable, and turns ideas into action." },
+    completerFinisher: { name: "Completer Finisher", description: "Painstaking, conscientious, and delivers on time." },
+    specialist: { name: "Specialist", description: "Single-minded, self-starting, and provides knowledge." }
 };
 
 
 createApp();
-//fetchCharacters();
 
 
 function createApp() {
@@ -27,20 +35,9 @@ function createApp() {
 
 
 
-async function fetchCharacters() {
-    while (characters.length < 5) {
-        const res = await fetch(url)
-        const data = await res.json()
-        console.log(data)
-        characters.push(data)
-    }
-}
-
 function calculateScore()
 {
     const form = document.getElementById('test');
-    console.log(form)
-    traits.resourceInvestigator = parseInt(form.q1.value);
 }
 
 
