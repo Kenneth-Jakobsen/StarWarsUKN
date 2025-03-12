@@ -58,7 +58,6 @@ function submitQuiz()
     }
 
     myStarWarsCharacter = starWarsCharacters.filter(c => c.role == highestScoreRole)[0];
-    console.log(myStarWarsCharacter)
     const resultContainer = document.getElementById("app");
     if (myStarWarsCharacter) {
         resultContainer.innerHTML = `
@@ -72,7 +71,6 @@ function submitQuiz()
             </div>
         `;
     }
-    
 }
 
 
