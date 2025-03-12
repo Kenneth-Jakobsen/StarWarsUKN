@@ -34,8 +34,8 @@ function createApp() {
         <button onclick="startQuiz()" class="startQuiz">Start</button>
     </div>
     <div id="test"></div>
-    <div id="player" style="width: 300px; height: 200px;"></div>
     <button onclick="toggleMute()" class="muteButton">Mute</button>
+    <audio id="backgroundMusic" src="audio/music.mp3" autoplay loop>
     `;
 
     
@@ -45,32 +45,17 @@ function createApp() {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '200',
-        width: '300',
-        videoId: 'xL7brJgJKMg', 
-        events: {
-            'onReady': onPlayerReady
-        }
-    });
-}
-
-
-
-function onPlayerReady(event) {
-    event.target.setVolume(100);
-    event.target.playVideo();
-}
 
 function toggleMute() {
     const muteButton = document.querySelector(".muteButton");
+    const backgroundMusic = document.getElementById("backgroundMusic");
     if (player.isMuted()) {
         player.unMute();
+        backgroundMusic.muted = false;
         muteButton.textContent = "Mute";
     } else {
         player.mute();
+        backgroundMusic.muted = true;
         muteButton.textContent = "Unmute";
     }
 }
@@ -114,7 +99,6 @@ function submitQuiz() {
     } else {
         resultContainer.innerHTML = `
             <div class='result'>
-                <h2>I find your lack of faith disturbing</h2>
                 <div class="character-container">
                 <img class="img" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGJzdXV5dWkzY3dtNjNhemczdzBraXlxa3ozOWFuaGw4eXE0cjRjZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M4iOAkEAPwAnK/giphy.gif" />
                 </div>
@@ -131,8 +115,6 @@ function startQuiz() {
         belbinRoles[role].score = 0;
     }
     console.log(belbinRoles);
-
-    player.playVideo();
 
     document.getElementById("container").innerHTML = '';
     const labels = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
