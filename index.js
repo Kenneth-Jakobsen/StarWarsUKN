@@ -1,8 +1,8 @@
 const starWarsCharacters = [
     { name: "Luke Skywalker", role: "Coordinator", image:'./img/luke.png' },
     { name: "Darth Vader", role: "Shaper", image:'./img/darth.png' },
-    { name: "Princess Leia", role: "Completer Finisher",image:'./img/leia.png' },
-    { name: "Han Solo", role: "Resource Investigator", image:'./img/han.png' },
+    { name: "Princess Leia", role: "CompleterFinisher",image:'./img/leia.png' },
+    { name: "Han Solo", role: "ResourceInvestigator", image:'./img/han.png' },
     { name: "Yoda", role: "Plant", image:'./img/yoda.png'},
     { name: "R2-D2", role: "Specialist", image:'./img/r2d2.png' },
     { name: "C-3PO", role: "Implementer", image:'./img/c3po.png' },
@@ -11,10 +11,10 @@ const starWarsCharacters = [
 
 const belbinRoles = {
     plant: { name: "Plant", description: "Creative, imaginative, and generates new ideas.", score:0 },
-    resourceInvestigator: { name: "Resource Investigator", description: "Outgoing, explores opportunities, and develops contacts.", score:0 },
+    resourceInvestigator: { name: "ResourceInvestigator", description: "Outgoing, explores opportunities, and develops contacts.", score:0 },
     coordinator: { name: "Coordinator", description: "Mature, confident, and clarifies goals.", score:0 },
     shaper: { name: "Shaper", description: "Challenging, dynamic, and thrives on pressure.", score:0 },
-    monitorEvaluator: { name: "Monitor Evaluator", description: "Sober, strategic, and discerning.", score:0 },
+    monitorEvaluator: { name: "MonitorEvaluator", description: "Sober, strategic, and discerning.", score:0 },
     teamworker: { name: "Teamworker", description: "Cooperative, mild, and perceptive." , score:0},
     implementer: { name: "Implementer", description: "Disciplined, reliable, and turns ideas into action." , score:0},
     completerFinisher: { name: "Completer Finisher", description: "Painstaking, conscientious, and delivers on time." , score:0},
