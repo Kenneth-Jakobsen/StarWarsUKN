@@ -108,6 +108,7 @@ body {
 .result {
     background-color: #f4f4f9;
     border-left: 6px solid #4CAF50; /* Green accent border */
+    text-align: center;
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
@@ -133,6 +134,11 @@ body {
     margin-top: 12px;
     color: #2196F3; /* Blue accent */
     font-size: 1.5rem;
+}
+
+.result h4{
+    margin-top: 12px;
+    font-size: 1.2rem;
 }
 
 .result >.character-container>img
