@@ -1,14 +1,15 @@
 const starWarsCharacters = [
-    { name: "Luke Skywalker", role: "Coordinator", image:'./img/luke.png' },
-    { name: "Darth Vader", role: "Shaper", image:'./img/darth.png' },
-    { name: "Princess Leia", role: "Completerfinisher", image:'./img/leia.png' },
-    { name: "Han Solo", role: "Resourceinvestigator", image:'./img/han.png' },
-    { name: "Yoda", role: "Plant", image:'./img/yoda.png' },
-    { name: "R2-D2", role: "Specialist", image:'./img/r2d2.png' },
-    { name: "C-3PO", role: "Implementer", image:'./img/c3po.png' },
-    { name: "Obi-Wan Kenobi", role: "Monitorevaluator", image:'./img/kenobi.png' },
-    { name: "Chewbacca", role: "Teamworker", image:'./img/chewie.png' }
+    { name: "Luke Skywalker", role: "Coordinator", image:'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3oxeDc5ZjdkdXhndXBucDVvNHMydGpmN2FncW52NWs3bjB5M3ZhcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8ZGtiCgA91i6Y/giphy.gif', line:"I am a Jedi, like my father before me." },
+    { name: "Darth Vader", role: "Shaper", image:'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczBobzVxcnJpMHQxMGZra2Rtb3hqMGVvazhhNnB5N3VxOHYzMml1MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9DPpf0zTqRASyzTi/giphy.gif', line:"Be careful not to choke on your aspirations."},
+    { name: "Princess Leia", role: "Completerfinisher", image:'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmNrY3pkaGJpMXM4b2g5dmdrdjhmOXBocjc5M2NoNHY0eG8yMzl6MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mBMJNm8u7xAaqXpmfT/giphy.gif', line:"Someone has to save our skins. Into the garbage chute, flyboy!"},
+    { name: "Han Solo", role: "Resourceinvestigator", image:'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGl2enZlYTVkNGpncmdnejdydTVnMWlvYXU3MTBhcWtqdjE1NXA2ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rHR8qP1mC5V3G/giphy.gif', line:"Never tell me the odds!"},
+    { name: "Yoda", role: "Plant", image:'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc21pZWl4aTUwbDluazBuZnZnN2JvM3hhZ3lkbDZ0NzdzbnlpdmE1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hqoInD6ATfvW0/giphy.gif', line:"Do, or do not. There is no try."},
+    { name: "R2-D2", role: "Specialist", image:'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmVhdzM1enc5ZGpsejY3NzJ0dThnYTR4bnJ4d2dmMDdreDlkeWViayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Khurh5g5bBIkg/giphy.gif' , line: "bee-boop-bee-bee-boop" },
+    { name: "C-3PO", role: "Implementer", image:'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGxib2twaTN0dWZpeDRmYmw5bWMzMHZzNWlkdjZ6MWF0OGtoMmg4byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1KukV0se1IbeyMX6/giphy.gif' , line: "We're doomed!" },
+    { name: "Obi-Wan Kenobi", role: "Monitorevaluator", image:'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGpiYTl2cHhqZDZzbmEydzlpbzlxbGsweXJwcXZ6ZjNpeHZ1YzgxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12Gyz2J1b9SjD2/giphy.gif', line: "Hello there" },
+    { name: "Chewbacca", role: "Teamworker", image:'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHp2cXdoZHp3czQxbGg0aGJtMzNxcjVlaHNidHQzNm9pbnRxb3N1aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1J3DEiWcZxrje4Za/giphy.gif', line:"RRAARGHH!" }
 ];
+
 
 const belbinRoles = {
     plant: { name: "Plant", description: "Creative, imaginative, and generates new ideas.", score:0 },
@@ -29,11 +30,49 @@ createApp();
 function createApp() {
     document.getElementById("app").innerHTML = /*HTML*/`
     <div id="container" class="container">
-    <h1 class="header">Hvilken Star Wars Character er du?</h1>
-    <button onclick="startQuiz()" class="startQuiz">Start Quiz</button>
+        <h1 class="header">Which Star Wars character are you?</h1>
+        <button onclick="startQuiz()" class="startQuiz">Start</button>
     </div>
     <div id="test"></div>
+    <div id="player" style="width: 300px; height: 200px;"></div>
+    <button onclick="toggleMute()" class="muteButton">Mute</button>
     `;
+
+    
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '200',
+        width: '300',
+        videoId: 'xL7brJgJKMg', 
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+
+
+function onPlayerReady(event) {
+    event.target.setVolume(100);
+    event.target.playVideo();
+}
+
+function toggleMute() {
+    const muteButton = document.querySelector(".muteButton");
+    if (player.isMuted()) {
+        player.unMute();
+        muteButton.textContent = "Mute";
+    } else {
+        player.mute();
+        muteButton.textContent = "Unmute";
+    }
 }
 
 
@@ -69,12 +108,17 @@ function submitQuiz() {
                 <div class="character-container">
                     <img src="${myStarWarsCharacter.image}" alt="${myStarWarsCharacter.name}">
                 </div>
+                <button onclick="createApp()" class="startQuiz">${myStarWarsCharacter.line}</button>
             </div>
         `;
     } else {
         resultContainer.innerHTML = `
             <div class='result'>
-                <h2>No match found</h2>
+                <h2>I find your lack of faith disturbing</h2>
+                <div class="character-container">
+                <img class="img" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGJzdXV5dWkzY3dtNjNhemczdzBraXlxa3ozOWFuaGw4eXE0cjRjZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M4iOAkEAPwAnK/giphy.gif" />
+                </div>
+                <button onclick="createApp()" class="startQuiz">Start Quiz</button>
             </div>
         `;
     }
@@ -83,6 +127,13 @@ function submitQuiz() {
 
 
 function startQuiz() {
+    for (const role in belbinRoles) {
+        belbinRoles[role].score = 0;
+    }
+    console.log(belbinRoles);
+
+    player.playVideo();
+
     document.getElementById("container").innerHTML = '';
     const labels = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
     let quizHTML = '';

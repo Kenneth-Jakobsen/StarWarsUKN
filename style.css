@@ -135,6 +135,15 @@ body {
     font-size: 1.5rem;
 }
 
+.result >.character-container>img
+{
+    width: 50%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
 .character-container {
     margin-top: 16px;
     display: flex;
