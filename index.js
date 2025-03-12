@@ -34,27 +34,24 @@ function createApp() {
         <button onclick="startQuiz()" class="startQuiz">Start</button>
     </div>
     <div id="test"></div>
+    <div id="player" style="width: 300px; height: 200px;"></div>
     <button onclick="toggleMute()" class="muteButton">Mute</button>
-    <audio id="backgroundMusic" src="audio/music.mp3" autoplay loop>
+    <audio id="backgroundMusic" src="audio/music.mp3" loop></audio>
     `;
 
-    
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    const backgroundMusic = document.getElementById("backgroundMusic");
+    backgroundMusic.volume = 0.2;
+    backgroundMusic.play();
 }
 
 
 function toggleMute() {
     const muteButton = document.querySelector(".muteButton");
     const backgroundMusic = document.getElementById("backgroundMusic");
-    if (player.isMuted()) {
-        player.unMute();
+    if (backgroundMusic.muted) {
         backgroundMusic.muted = false;
         muteButton.textContent = "Mute";
     } else {
-        player.mute();
         backgroundMusic.muted = true;
         muteButton.textContent = "Unmute";
     }
