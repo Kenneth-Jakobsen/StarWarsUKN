@@ -25,7 +25,7 @@ const belbinRoles = {
 
 
 createApp();
-
+                               
 
 function createApp() {
     
@@ -37,19 +37,28 @@ function createApp() {
     <div id="test"></div>
     <label for="volumeSlider">Volume</label>
     <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.2" onchange="setVolume(this.value)">
-    <audio id="backgroundMusic" src="audio/music.mp3" loop></audio>
-    `;
+    <audio id="backgroundMusic" src="audio/music.mp3" autoplay loop></audio>`
+    initializeBackgroundMusic();
+}
 
+function initializeBackgroundMusic() {
     const backgroundMusic = document.getElementById("backgroundMusic");
     backgroundMusic.volume = 0.2;
-    backgroundMusic.play();
+    document.querySelector(".startQuiz").addEventListener("click", () => {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play().catch(error => {
+                console.error("Failed to play background music:", error);
+            });
+        }
+    });
 }
 
 function setVolume(volume) {
     const backgroundMusic = document.getElementById("backgroundMusic");
-    backgroundMusic.volume = volume;
+    if (backgroundMusic) {
+        backgroundMusic.volume = volume;
+    }
 }
-
 
 function toggleMute() {
     const muteButton = document.querySelector(".muteButton");
